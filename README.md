@@ -488,3 +488,5 @@ export default function UserCard({ name, email, avatar }: UserCardProps) {
 **Happy Coding! **
 
 Remember: Type safety is not just a feature—it's a commitment to code quality and team collaboration.
+
+Practice change for learning pull requests.
