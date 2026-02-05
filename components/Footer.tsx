@@ -8,7 +8,7 @@ interface Collaborator {
 const collaborators: Collaborator[] = [
   { name: 'Eileen Lojano', role: 'Developer' },
   { name: 'Faraibe Khan', role: 'Developer' },
-  { name: 'Nuzat Khan', role: 'Developer' },
+  { name: 'Nuzhat Khan', role: 'Developer' },
   { name: 'Sagor S. Dhor', role: 'Developer' },
   { name: 'Madiha (What is Your last name?)', role: 'Developer' },
 ];
