@@ -22,8 +22,8 @@ export default function Signup() {
     try {
       await signup(email, password);
       router.push('/');
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     }
   };
 

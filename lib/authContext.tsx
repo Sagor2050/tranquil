@@ -30,18 +30,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for token in localStorage
-    const token = localStorage.getItem('token');
-    if (token) {
-      // Decode token to get user info (simple decode, in production use proper JWT library)
-      try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        setUser({ id: payload.userId, email: payload.email });
-      } catch (error) {
-        localStorage.removeItem('token');
+    // Check for token in localStorage and restore user session
+    const restoreSession = () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const payload = JSON.parse(atob(token.split('.')[1]));
+          setUser({ id: payload.userId, email: payload.email });
+        } catch {
+          localStorage.removeItem('token');
+        }
       }
-    }
-    setLoading(false);
+      setLoading(false);
+    };
+    
+    restoreSession();
   }, []);
 
   const login = async (email: string, password: string) => {
@@ -73,7 +76,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       throw new Error(error.error);
     }
 
-    const data = await response.json();
+    await response.json();
     // After signup, auto login
     await login(email, password);
   };
