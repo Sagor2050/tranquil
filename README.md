@@ -474,6 +474,26 @@ export default function UserCard({ name, email, avatar }: UserCardProps) {
 5. Test your changes locally
 6. Submit a pull request with a clear description
 
+##  CI / Automated Checks
+
+This repository includes a GitHub Actions workflow that runs dependency installation, linting, and a build on pushes and pull requests. If you push a branch to GitHub the workflow will run automatically.
+
+If you prefer to run checks locally, use the helper script added at `scripts/install-deps.sh`:
+
+```bash
+# make the script executable once
+chmod +x scripts/install-deps.sh
+
+# run it from the project root
+./scripts/install-deps.sh
+
+# then run lint/build locally
+npm run lint
+npm run build
+```
+
+If you don't have Node/npm installed, see the "Prerequisites" section above for recommended installers (`nvm` or Homebrew).
+
 
 ##  Team
 

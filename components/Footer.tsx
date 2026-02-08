@@ -10,7 +10,7 @@ const collaborators: Collaborator[] = [
   { name: 'Faraibe Khan', role: 'Developer' },
   { name: 'Nuzhat Khan', role: 'Developer' },
   { name: 'Sagor S. Dhor', role: 'Developer' },
-  { name: 'Madiha (What is Your last name?)', role: 'Developer' },
+  { name: 'Madiha Sultan', role: 'Developer' },
 ];
 
 export default function Footer() {
