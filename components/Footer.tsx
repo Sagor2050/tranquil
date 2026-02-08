@@ -6,9 +6,7 @@ interface Collaborator {
 }
 
 const collaborators: Collaborator[] = [
-  
-  
-  { name: 'Eileen Lojano', role: 'Developer'}
+  { name: 'Eileen Lojano', role: 'Developer' },
   { name: 'Faraibe Khan', role: 'Developer' },
   { name: 'Nuzhat Khan', role: 'Developer' },
   { name: 'Sagor S. Dhor', role: 'Developer' },
