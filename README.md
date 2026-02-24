@@ -88,8 +88,65 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
+### 5. Docker Setup (Optional)
 
+You can run Tranquil in Docker containers for consistent development and deployment environments.
 
+**Prerequisites:**
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+**Start the application with Docker:**
+
+```bash
+docker-compose up --build
+```
+
+This will:
+- Start a PostgreSQL database container
+- Build and start the Next.js application container
+- Expose the app on http://localhost:3000
+
+**View logs:**
+```bash
+docker-compose logs -f
+```
+
+**Stop the containers:**
+```bash
+docker-compose down
+```
+
+**Clean up everything (including data):**
+```bash
+docker-compose down -v
+```
+
+### 6. Authentication System
+
+Tranquil includes a complete authentication system with JWT tokens.
+
+**Login Page:** `http://localhost:3000/login`
+**Signup Page:** `http://localhost:3000/signup`
+**Dashboard:** `http://localhost:3000/dashboard` (protected route)
+
+**How Authentication Works:**
+
+1. User signs up with email, name, and password
+2. Password is hashed with bcryptjs and stored in PostgreSQL
+3. JWT token is generated and sent to client
+4. Token is stored in localStorage
+5. Protected routes verify the token before accessing
+
+**Environment Variables Required:**
+```env
+JWT_SECRET=your-secret-key
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=tranquil_db
+```
 
 ##  Beginner's Guide: From Clone to Pull Request
 

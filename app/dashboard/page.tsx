@@ -118,6 +118,18 @@ export default function DashboardPage() {
             </Link>
           </div>
 
+          {/* Breathing Exercises Card */}
+          <div className="rounded-lg bg-white p-6 shadow-md border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">🫁 Guided Breathing</h3>
+            <p className="text-gray-600 mb-4">Calm your mind with guided breathing exercises</p>
+            <Link
+              href="/breathing"
+              className="text-indigo-600 hover:text-indigo-500 font-semibold"
+            >
+              Start Breathing →
+            </Link>
+          </div>
+
           {/* AI Chat Card */}
           <div className="rounded-lg bg-white p-6 shadow-md border border-gray-200">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">🤖 AI Assistant</h3>

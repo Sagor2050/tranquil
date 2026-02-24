@@ -41,6 +41,10 @@ export async function createUser(
     return result.rows[0];
   } catch (error) {
     console.error('Error creating user:', error);
+    if (error instanceof Error) {
+      console.error('Database error details:', error.message);
+      console.error('Stack:', error.stack);
+    }
     return null;
   }
 }
